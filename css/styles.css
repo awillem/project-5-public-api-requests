@@ -15,12 +15,15 @@ html, body {
 
 body {
     font-family: "Nunito", sans-serif;
+   
     text-align: center;
-    background: rgba(235, 235, 235, 0.9);
+    /*background: rgba(235, 235, 235, 0.9);*/
+    background: linear-gradient(rgba(245,235,235,0.9) 30%,rgba(10, 148, 152, .5) 85%,#0a9498);
 }
 
 header {
-    padding: 15px 5px 5px;
+    padding: 10px 5px 5px;
+    margin-top: 10px;
 }
 
 .header-inner-container {
@@ -29,7 +32,9 @@ header {
 }
 
 header h1 {
-    font-size: 1.25em;
+    
+    font-family: 'Oleo Script', cursive;
+    font-size: 1.5em;
     color: rgba(50, 50, 50, 0.9);
     margin-top: 35px;
 }
@@ -87,7 +92,7 @@ header h1 {
     max-width: 360px;
     margin: 10px 10px 20px;
     padding: 10px;
-    background: rgba(245, 245, 245, 0.9);
+    background: rgba(245, 245, 255, 0.9);
     border-radius: 0.25em;
     border: 1px solid rgba(50, 50, 50, 0.3);
     transition: .4s ease-out;
@@ -106,6 +111,7 @@ header h1 {
 
 .card-name {
     margin: 20px auto 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 .card-text {

@@ -150,7 +150,7 @@ gallery.addEventListener('click', function (e) {
 
 modalCont.addEventListener('click', function (e){
     //if the 'X' in the modal window or outside the modal window is clicked,  display = none
-    if (e.target.className === 'modal-close-btn' || e.target.className === "modal-container") {
+    if (e.target.className === 'modal-close-btn' ||e.target.tagName === 'STRONG' || e.target.className === "modal-container") {
     modalCont.style.display = "none";
     // if next/previous button, sets a counter to -1
     } else if (e.target.className === 'modal-prev btn' || e.target.className === 'modal-next btn') {
