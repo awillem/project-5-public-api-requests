@@ -4,9 +4,9 @@ const galleryCards = gallery.children;
 const modalCont = document.createElement('div');
 modalCont.className = 'modal-container';
 modalCont.style.display = "none";
-let modalButtons;
-let nextButton;
-let prevButton;
+const nextButton = document.getElementById('modal-next');
+const prevButton = document.getElementById('modal-prev');
+const modalButtons = document.getElementsByClassName('modal-container');
 const modalCards = document.getElementsByClassName('modal');
 const script = document.getElementsByTagName('script');
 document.body.insertBefore(modalCont,script[0]);
@@ -96,9 +96,7 @@ function renderModal(data) {
     <button type="button" id="modal-next" class="modal-next btn">Next</button>
     </div></div>`;
     modalCont.innerHTML = modalDivs;
-    nextButton = document.getElementById('modal-next');
-    prevButton = document.getElementById('modal-prev');
-    modalButtons = document.getElementsByClassName('modal-container');
+   
 }
 
 
@@ -138,7 +136,31 @@ gallery.addEventListener('click', function (e) {
 modalCont.addEventListener('click', function (e){
     if (e.target.tagName === 'STRONG' || e.target.className === "modal-container") {
     modalCont.style.display = "none";
-    }
+    } else if (e.target.className === 'modal-prev btn' || e.target.className === 'modal-next btn') {
+        let count = -1;
+        for (let i = 0; i < modalCards.length; i++ ){
+            if( modalCards[i].style.display === 'block'){
+                count = i;
+            }       
+        }
+            
+            if(e.target.className === 'modal-prev btn') {
+                if(count > 0){
+                    modalCards[count-1].style.display = 'block';
+                    modalCards[count].style.display = "none";
+                    
+                }
+                
+            } else if (e.target.className === 'modal-next btn'){
+                if (count < modalCards.length - 1) {
+                    modalCards[count+1].style.display = 'block';
+                    modalCards[count].style.display = "none";
+                    
+                }
+            }
+            
+    } 
+    
 });
 
 document.addEventListener('keyup', function (e){
@@ -146,10 +168,6 @@ document.addEventListener('keyup', function (e){
         modalCont.style.display = 'none';
     }
   
-});
-console.log(nextButton, prevButton, modalButtons);
-modalButtons.addEventListener('click', function(e){
-    console.log(e.target.className);
 });
 
 
