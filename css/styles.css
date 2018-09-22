@@ -14,10 +14,8 @@ html, body {
 }
 
 body {
-    font-family: "Nunito", sans-serif;
-   
+    font-family: "Raleway", sans-serif;   
     text-align: center;
-    /*background: rgba(235, 235, 235, 0.9);*/
     background: linear-gradient(rgba(245,235,235,0.9) 30%,rgba(10, 148, 152, .5) 85%,#0a9498);
 }
 
@@ -34,7 +32,8 @@ header {
 header h1 {
     
     font-family: 'Oleo Script', cursive;
-    font-size: 1.5em;
+    text-shadow: 2px 3px 5px  rgba(125,125,125, 0.7); 
+    font-size: 1.6em;
     color: rgba(50, 50, 50, 0.9);
     margin-top: 35px;
 }
@@ -95,6 +94,7 @@ header h1 {
     background: rgba(245, 245, 255, 0.9);
     border-radius: 0.25em;
     border: 1px solid rgba(50, 50, 50, 0.3);
+    box-shadow: 2px 3px 5px rgba(125,125,125, 0.3); 
     transition: .4s ease-out;
     overflow: hidden;
 }
@@ -103,6 +103,7 @@ header h1 {
     width: 95px;
     margin: 10px 15px auto 10px;
     border-radius: 50%;
+    border: 5px solid rgba(50,50,50,1)
 }
 
 .card-info-container {
@@ -168,10 +169,13 @@ header h1 {
     width: 150px;
     margin-top: 35px;
     border-radius: 50%;
+    border: 5px solid rgba(50,50,50,1)
+
 }
 
 .modal-name {
-    margin-bottom: 5px;
+    margin-bottom: 5px;    
+    font-family: 'Poppins', sans-serif;
 }
 
 .modal-text {
