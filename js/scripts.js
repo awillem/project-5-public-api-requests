@@ -1,4 +1,13 @@
 let eeData = [];
+
+//Add Search Field
+const searchCont = document.getElementsByClassName('search-container');
+searchCont[0].innerHTML = `<form action="#" method="get">
+<input type="search" id="search-input" class="search-input" placeholder="Search...">
+<input type="submit" value="&#x1F50D;" id="serach-submit" class="search-submit">
+</form>`;
+const searchField = document.getElementById('search-input');
+// const searchCont = searchField.parentElement.parentElement;
 const gallery = document.getElementById('gallery');
 const galleryCards = gallery.children;
 const modalCont = document.createElement('div');
@@ -100,8 +109,6 @@ function renderModal(data) {
 }
 
 
-//Add Search Field
-
 
 
 // Event Listeners ***********************
@@ -168,6 +175,34 @@ document.addEventListener('keyup', function (e){
         modalCont.style.display = 'none';
     }
   
+});
+
+searchCont[0].addEventListener('submit', function (e){
+    e.preventDefault();
+   let searchTerm = searchField.value.toLowerCase();
+   console.log(searchTerm);
+   for (let i = 0; i < galleryCards.length; i++) {
+    let galleryName = galleryCards[i].children[1].children[0].innerText.toLowerCase();
+    if(galleryName.includes(searchTerm)) {
+        galleryCards[i].style.display="flex";
+    } else {
+        galleryCards[i].style.display="none";
+    }
+   }
+});
+
+searchCont[0].addEventListener('keyup', function (e) {
+    e.preventDefault();
+   let searchTerm = searchField.value.toLowerCase();
+   console.log(searchTerm);
+   for (let i = 0; i < galleryCards.length; i++) {
+    let galleryName = galleryCards[i].children[1].children[0].innerText.toLowerCase();
+    if(galleryName.includes(searchTerm)) {
+        galleryCards[i].style.display="flex";
+    } else {
+        galleryCards[i].style.display="none";
+    }
+   }
 });
 
 
