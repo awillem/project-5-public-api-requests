@@ -93,7 +93,7 @@ header h1 {
     margin: 10px 10px 20px;
     padding: 10px;
     background: rgba(245, 245, 255, 0.9);
-    border-radius: 0.25em;
+    border-radius: 0.4em;
     border: 1px solid rgba(50, 50, 50, 0.3);
     box-shadow: 2px 3px 5px rgba(125,125,125, 0.3); 
     transition: .4s ease-out;
